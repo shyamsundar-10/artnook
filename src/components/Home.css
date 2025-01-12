@@ -1,0 +1,127 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin-top: 60px;
+  padding: 0;
+}
+
+#glance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#txt-home {
+  font-size: large;
+  padding: 25px 25px;
+  flex: 1;
+}
+#bg-img {
+  flex: 1;
+  height: 560px;
+  position: relative;
+  animation: imgimg 3s infinite;
+  max-width: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+@keyframes imgimg {
+  0% {
+    filter: grayscale(1);
+    filter: brightness(-100);
+  }
+  50% {
+    filter: none;
+  }
+  100% {
+    filter: grayscale(1);
+    filter: brightness(-100);
+  }
+}
+.buttons {
+  display: flex;
+  text-align: center;
+}
+.buttons .cbtn, .ebtn {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-size: x-large;
+  background-image: none;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 70px;
+  margin-right: 15px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 0px 12px rgb(121, 121, 121);
+  width: 80px; /* Set a fixed width */
+  height: 80px; /* Set a fixed height */
+}
+.buttons .cbtn {
+  background-color: #000;
+  color: #fff;
+}
+.buttons .ebtn {
+  background-color: #fff;
+  color: #000;
+}
+
+.buttons p {
+  background: transparent;
+  font-weight: 100;
+  font-size: large;
+}
+#details-1, #details-2 {
+  display: flex;
+  align-items: center; /* Align items in the center */
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+#details-1 #quote, #details-2 #quote {
+  padding: 20px;
+  flex: 1;
+}
+#details-1-img, #details-2-img {
+  width: 400px;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+  box-shadow: 7px 7px 10px 3px gray;
+}
+#details-1-img {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#details-2-img {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+#nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#nav .btn {
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  #txt-home {
+    padding: 10px;
+    text-align: center;
+  }
+  .buttons {
+    justify-content: space-evenly;
+  }
+  #quote {
+    padding: 10px;
+  }
+  #details-1, #details-2 {
+    flex-direction: column;
+  }
+  #details-2 {
+    flex-direction: column-reverse; /* Reverse the order for details-2 */
+  }
+  #details-1-img, #details-2-img {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+}

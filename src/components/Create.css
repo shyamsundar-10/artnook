@@ -1,0 +1,205 @@
+.create {
+  text-align: center;
+  padding: 20px;
+}
+
+.create h1 {
+  margin-bottom: 20px;
+}
+
+.drawing-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: auto; 
+  width: 700px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.selected-color {
+  width: 40px; /* Adjusted size */
+  height: 40px; /* Adjusted size */
+  border: 3px solid #000;
+  border-radius: 7px;
+}
+
+.colors {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr); /* 11 colors per row */
+  gap: 0; 
+  width: auto; 
+  height: 40px; 
+}
+
+.color {
+  aspect-ratio: 1; /* Maintain square shape */
+  cursor: pointer;
+  border: 1px solid transparent; /* Optional border */
+  box-sizing: border-box; /* Include border in size */
+}
+
+
+.color.active {
+  border: 2px solid #000;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Match height of selected color */
+}
+
+.tools .tool {
+  width: 40px; /* Adjusted size */
+  height: 40px; /* Adjusted size */
+  margin: 0 2px; /* Adjusted margin */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tools .tool.active {
+  background-color: #007AFF;
+  color: white;
+}
+.tool:hover {
+  background-color: #ddd;
+}
+
+.brush-sizes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Match height of selected color */
+}
+
+.brush {
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+  margin: 0 2px; /* Adjusted margin */
+  transition: background-color 0.3s, width 0.3s, height 0.3s;
+}
+
+.brush.active {
+  background: #007AFF;
+}
+
+.brush:nth-child(1) {
+  width: 10px; /* Adjusted size */
+  height: 10px; /* Adjusted size */
+}
+
+.brush:nth-child(2) {
+  width: 15px; /* Adjusted size */
+  height: 15px; /* Adjusted size */
+}
+
+.brush:nth-child(3) {
+  width: 20px; /* Adjusted size */
+  height: 20px; /* Adjusted size */
+}
+
+.brush:nth-child(4) {
+  width: 25px; /* Adjusted size */
+  height: 25px; /* Adjusted size */
+}
+
+.utility-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Match height of selected color */
+}
+
+.utility-tool {
+  width: 40px; /* Adjusted size */
+  height: 40px; /* Adjusted size */
+  margin: 0 2px; /* Adjusted margin */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.utility-tool:hover {
+  background-color: #ddd;
+}
+
+.canvas-wrapper {
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  display: inline-block;
+  background-color: white; /* Plain white background */
+}
+
+.popup {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #00000033;
+  font-size: 16px;
+  z-index: 1000;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+  .drawing-area {
+    flex-direction: column;
+  }
+  .toolbar {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+  .selected-color, .color, .tools .tool, .brush, .utility-tool {
+    width: 25px; /* Further adjusted size */
+    height: 25px; /* Further adjusted size */
+    margin: 2px; /* Further adjusted margin */
+  }
+  .colors {
+    grid-template-columns: repeat(11, 1fr);
+    height: auto;
+  }
+  .tools, .brush-sizes, .utility-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .canvas-wrapper {
+    width: 100%; /* Ensure canvas fits within screen on mobile */
+    height: auto; /* Adjust height to fit content */
+  }
+}

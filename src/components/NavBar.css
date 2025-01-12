@@ -1,0 +1,77 @@
+.navbar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #000; 
+    color: #fff; 
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+
+  .nav-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-title a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-buttons {
+    width: 40px;
+    height: 40px;
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+
+  .nav-buttons:hover {
+    background-color: #252525;
+  } 
+
+  .github-link {
+    text-decoration: none;
+  }
+  
+  .github-button {
+    background-color: #1c1c1c;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 1rem;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .github-button i { 
+    margin-right: 8px;
+  }
+
+  .github-button:hover {
+    background-color: #252525;
+  } 
+  
+  @media (max-width: 768px) {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
